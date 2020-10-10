@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #434344;
+  background-color: #cfd0cf;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 42px;
+  line-height: 47px;
+}
+
+.cards {
+  margin-top: 40px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 120px);
+  grid-auto-rows: 120px;
+  grid-gap: 25px;
+}
+
+.card-field {
+  height: 120px;
+  font-size: 75px;
+  cursor: pointer;
+  position: relative;
+  perspective: 600px;
+  transform: scale(1);
+}
+
+.card-field:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  border: 5px solid #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+  transition: transform .5s;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background: linear-gradient(45deg, #22ab93, #19668d);
+}
+
+.card-front {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.flipped .card-front {
+  transform: rotateY(360deg);
+}
+
+.flipped .card-back {
+  transform: rotateY(180deg);
+}
+
+.timer-block {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.timer {
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fefefe;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.modal-title {
+  font-size: 48px;
+}
+
+.btn-restart {
+  color: #fff;
+  cursor: pointer;
+  margin-top: 40px;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 9px;
+  border: none;
+  background: linear-gradient(45deg, #19668d, #22ab93);
+}
